@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Договір оферти — Ірина Хороших</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:#F5F0EB;color:#1a1714;font-family:'Jost',sans-serif;font-weight:300;line-height:1.8;}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:0.5px solid rgba(26,23,20,.12);background:#F5F0EB;position:sticky;top:0;z-index:100;}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.08em;color:#1a1714;text-decoration:none;}
+    .nav-logo em{font-style:italic;}
+    .nav-back{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6b6056;text-decoration:none;}
+    .nav-back:hover{color:#8c2a2a;}
+    .wrap{max-width:760px;margin:0 auto;padding:60px 40px 100px;}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;line-height:1.1;margin-bottom:8px;}
+    .subtitle{font-size:13px;color:#8a7a6a;margin-bottom:48px;padding-bottom:24px;border-bottom:0.5px solid rgba(26,23,20,.12);}
+    h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:40px 0 14px;}
+    p{font-size:14px;color:#3a3530;margin-bottom:12px;}
+    ul,ol{padding-left:20px;margin-bottom:12px;}
+    li{font-size:14px;color:#3a3530;margin-bottom:6px;}
+    .rekvizity{background:#ede8e2;border:0.5px solid rgba(26,23,20,.12);padding:20px 24px;margin-top:16px;}
+    .rekvizity p{margin-bottom:4px;}
+    .rekvizity strong{font-weight:400;color:#1a1714;}
+    footer{text-align:center;padding:32px;font-size:12px;color:#8a7a6a;border-top:0.5px solid rgba(26,23,20,.1);}
+    footer a{color:#8c2a2a;text-decoration:none;}
+    @media(max-width:600px){.wrap{padding:40px 20px 80px;}.nav{padding:16px 20px;}}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo"><em>ірина</em> хороших</a>
+  <a href="/" class="nav-back">← На головну</a>
+</nav>
+
+<div class="wrap">
+  <h1>Договір публічної оферти</h1>
+  <p class="subtitle">Редакція від 22 квітня 2026 року</p>
+
+  <h2>1. Загальні положення</h2>
+  <p>Цей документ є публічною офертою (пропозицією) Фізичної особи-підприємця Демешок Ірини Миколаївни (далі — «Виконавець») на укладення договору про надання інформаційно-консультаційних послуг з будь-якою фізичною особою (далі — «Замовник»), яка акцептує цю оферту.</p>
+  <p>Акцептом оферти є факт оплати Замовником обраного продукту/послуги. З моменту оплати договір вважається укладеним.</p>
+
+  <h2>2. Реквізити Виконавця</h2>
+  <div class="rekvizity">
+    <p><strong>ФОП Демешок Ірина Миколаївна</strong></p>
+    <p>ЄДРПОУ / ІПН: 3182720123</p>
+    <p>Розрахунковий рахунок: UA243220010000026003340047899</p>
+    <p>Платіжна система: WayForPay</p>
+    <p>Контакт: <a href="https://www.instagram.com/ira.horoshyh/" target="_blank" style="color:#8c2a2a;">@ira.horoshyh</a></p>
+  </div>
+
+  <h2>3. Предмет договору</h2>
+  <p>Виконавець зобов'язується надати Замовнику доступ до інформаційних матеріалів в цифровому форматі (записи онлайн-зустрічей, вебінарів, воркбуків та практик), а Замовник зобов'язується сплатити вартість обраного продукту.</p>
+  <p>Перелік продуктів та їх вартість розміщені на сайті <a href="https://irynahoroshyh.com.ua" style="color:#8c2a2a;">irynahoroshyh.com.ua</a>.</p>
+
+  <h2>4. Порядок надання послуг</h2>
+  <p>Після підтвердження оплати Замовник отримує доступ до придбаного продукту через Telegram-бот протягом 24 годин з моменту оплати.</p>
+  <p>Доступ до матеріалів є безстроковим для Замовника особисто.</p>
+  <p>Передача матеріалів третім особам заборонена.</p>
+
+  <h2>5. Вартість та порядок оплати</h2>
+  <p>Вартість послуг зазначена на сайті у гривнях (UAH).</p>
+  <p>Оплата здійснюється через платіжну систему WayForPay банківською карткою або іншими доступними способами.</p>
+  <p>Оплата є підтвердженням згоди Замовника з умовами цієї оферти.</p>
+
+  <h2>6. Права та обов'язки сторін</h2>
+  <p><strong>Виконавець зобов'язується:</strong></p>
+  <ul>
+    <li>надати доступ до оплачених матеріалів у встановлені строки;</li>
+    <li>забезпечити якість матеріалів відповідно до їх опису на сайті;</li>
+    <li>зберігати конфіденційність персональних даних Замовника.</li>
+  </ul>
+  <p><strong>Замовник зобов'язується:</strong></p>
+  <ul>
+    <li>використовувати отримані матеріали виключно для особистого використання;</li>
+    <li>не копіювати, не поширювати та не продавати матеріали третім особам;</li>
+    <li>надати достовірні контактні дані для отримання доступу.</li>
+  </ul>
+
+  <h2>7. Відповідальність сторін</h2>
+  <p>Виконавець не несе відповідальності за результати, отримані Замовником від використання матеріалів, оскільки результат залежить від індивідуальних дій та зусиль Замовника.</p>
+  <p>Матеріали носять виключно інформаційний та освітній характер і не є медичною, психологічною або юридичною консультацією.</p>
+
+  <h2>8. Повернення коштів</h2>
+  <p>Умови повернення коштів викладені в окремому документі <a href="/refund.html" style="color:#8c2a2a;">«Політика повернення коштів»</a>.</p>
+
+  <h2>9. Вирішення спорів</h2>
+  <p>Усі спори вирішуються шляхом переговорів. У разі неможливості досягти згоди — відповідно до чинного законодавства України.</p>
+
+  <h2>10. Строк дії оферти</h2>
+  <p>Оферта набирає чинності з моменту розміщення на сайті і діє безстроково до її відкликання Виконавцем.</p>
+</div>
+
+<footer>
+  © 2026 Ірина Хороших · <a href="/">На головну</a> · <a href="/privacy.html">Політика конфіденційності</a> · <a href="/refund.html">Повернення коштів</a>
+</footer>
+
+</body>
+</html>
