@@ -1,0 +1,1143 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Iryna Khoroshikh — Хто Я Така</title>
+<template id="__bundler_thumbnail" data-bg-color="#F5F0EB">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F5F0EB"/>
+    <text x="600" y="380" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="220" fill="#1A1714" text-anchor="middle" font-weight="300">хто</text>
+    <text x="600" y="560" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="220" fill="#8C2A2A" text-anchor="middle" font-weight="300">я така</text>
+  </svg>
+</template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script>
+  const TWEAKS = /*EDITMODE-BEGIN*/{
+    "accent": "#8C2A2A",
+    "heroPhoto": "images\/hero.jpg",
+    "showPrice": true
+  }/*EDITMODE-END*/;
+</script>
+<style>
+  :root{
+    --cream:#F5F0EB;
+    --cream-2:#EDE6DE;
+    --ink:#1A1714;
+    --body:#3a3530;
+    --body-60: rgba(58,53,48,.72);
+    --ink-60: rgba(26,23,20,.60);
+    --ink-45: rgba(26,23,20,.45);
+    --ink-25: rgba(26,23,20,.25);
+    --ink-12: rgba(26,23,20,.12);
+    --accent:#8C2A2A;
+    --line: rgba(26,23,20,.18);
+    --line-cream: rgba(245,240,235,.22);
+    --serif: 'Cormorant Garamond', 'Times New Roman', serif;
+    --sans: 'Jost', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:var(--cream); color:var(--body); font-family:var(--sans); font-weight:300; -webkit-font-smoothing:antialiased; }
+  body{ font-size:16px; line-height:1.6; letter-spacing:.005em; }
+  img{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  button{ font:inherit; color:inherit; background:none; border:none; cursor:pointer; }
+
+  /* ===== NAV ===== */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 20px 28px;
+    background: rgba(245,240,235,.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: .5px solid var(--line);
+  }
+  .nav__brand{
+    font-family:var(--serif); font-style:italic; font-weight:400;
+    font-size: 20px; letter-spacing:.01em;
+  }
+  .nav__brand b{ font-weight:500; font-style:normal; letter-spacing:.18em; text-transform:uppercase; font-family:var(--sans); font-size:10px; margin-right:8px; opacity:.7;}
+  .nav__links{ display:none; gap: 28px; font-size:13px; letter-spacing:.04em; }
+  .nav__links a{ opacity:.7; transition:opacity .2s; }
+  .nav__links a:hover{ opacity:1; }
+  .nav__cta{
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    padding: 10px 18px;
+    border: .5px solid var(--ink);
+    border-radius: 999px;
+    transition: background .25s, color .25s;
+  }
+  .nav__cta:hover{ background:var(--ink); color:var(--cream); }
+  @media (min-width: 900px){ .nav__links{ display:flex; } .nav{ padding: 22px 48px; } }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height: 100vh;
+    padding: 92px 20px 40px;
+    display:grid; grid-template-columns: 1fr; gap: 28px;
+    align-items: end;
+    overflow:hidden;
+  }
+  .hero__photo{
+    order: -1;
+    width: 100%; aspect-ratio: 3/4;
+    overflow:hidden;
+    border: .5px solid var(--line);
+  }
+  .hero__photo img{
+    width:100%; height:100%; object-fit: cover; object-position: center 30%;
+    filter: saturate(.92) contrast(1.02);
+  }
+  .trilogy__anchor{
+    aspect-ratio: 2160 / 1186; overflow:hidden; border:.5px solid var(--line);
+    margin-top: 8px; background: #313028;
+  }
+  .trilogy__anchor img{ width:100%; height:100%; object-fit: contain; object-position: center; }
+  .hero__meta{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-60);
+    padding-bottom: 8px;
+    border-bottom: .5px solid var(--line);
+    margin-bottom: 18px;
+  }
+  .hero__name{
+    font-family: var(--serif); font-weight:400;
+    font-size: clamp(48px, 11vw, 132px);
+    line-height: .92; letter-spacing: -.02em;
+    color: var(--ink);
+  }
+  .hero__name em{
+    font-style: italic; font-weight:300;
+    display:block;
+  }
+  .hero__tagline{
+    font-family: var(--serif);
+    font-size: clamp(22px, 3.4vw, 34px);
+    line-height: 1.22; letter-spacing: -.005em;
+    font-weight:300;
+    max-width: 28ch;
+    margin-top: 32px;
+  }
+  .hero__tagline em{ font-style:italic; color:var(--accent);}
+  .hero__footer{
+    display:flex; gap: 14px; align-items:center; flex-wrap:wrap;
+    margin-top: 36px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap: 10px;
+    padding: 16px 26px;
+    font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
+    border-radius: 999px;
+    border: .5px solid var(--ink);
+    transition: background .25s, color .25s, border-color .25s;
+  }
+  .btn--solid{ background:var(--ink); color:var(--cream); border-color:var(--ink); }
+  .btn--solid:hover{ background:var(--accent); border-color:var(--accent); }
+  .btn--ghost:hover{ background:var(--ink); color:var(--cream); }
+  .btn--cream{ border-color: rgba(245,240,235,.55); color:var(--cream); }
+  .btn--cream:hover{ background: var(--cream); color: var(--ink); border-color: var(--cream); }
+  .btn__arrow{
+    display:inline-block; width:16px; height:.5px; background: currentColor; position:relative;
+  }
+  .btn__arrow::after{
+    content:""; position:absolute; right:-1px; top:-3px;
+    width:6px; height:6px; border-right:.5px solid currentColor; border-top:.5px solid currentColor;
+    transform: rotate(45deg);
+  }
+
+  @media (min-width: 900px){
+    .hero{
+      grid-template-columns: 1.05fr 1fr;
+      gap: 56px;
+      padding: 120px 48px 60px;
+      align-items: center;
+    }
+    .hero__photo{ order: 0; aspect-ratio: 4/5.2; height: calc(100vh - 160px); max-height: 860px; }
+    .hero__content{ padding-right: 24px; }
+  }
+  @media (min-width: 1280px){
+    .hero{ padding: 120px 80px 80px; gap: 96px; }
+  }
+
+  /* ===== SECTION BASE ===== */
+  section{ position:relative; }
+  .section__kicker{
+    display:flex; align-items:center; gap:14px;
+    font-size: 11px; letter-spacing:.28em; text-transform:uppercase; color:var(--ink-60);
+    margin-bottom: 28px;
+  }
+  .section__kicker .num{ font-family:var(--mono); font-size:10px; opacity:.7; }
+  .section__kicker .rule{ flex:1; height:.5px; background: var(--line); }
+
+  .wrap{ padding: 80px 20px; }
+  @media (min-width: 900px){ .wrap{ padding: 120px 48px; } }
+  @media (min-width: 1280px){ .wrap{ padding: 140px 80px; } }
+
+  /* ===== QUOTE ===== */
+  .quote{
+    background:var(--cream);
+    display:grid; grid-template-columns: 1fr; gap: 40px;
+    align-items:center;
+    border-top: .5px solid var(--line);
+    border-bottom: .5px solid var(--line);
+  }
+  .quote__img{
+    width:100%; aspect-ratio: 4/5; overflow:hidden;
+    border: .5px solid var(--line);
+  }
+  .quote__img img{ width:100%; height:100%; object-fit:cover; filter: grayscale(1) contrast(1.05); }
+  .quote__text{
+    font-family: var(--serif); font-weight:300;
+    font-size: clamp(28px, 4.8vw, 56px);
+    line-height: 1.18; letter-spacing: -.01em;
+    max-width: 24ch;
+  }
+  .quote__text em{ font-style:italic; color:var(--accent); }
+  .quote__mark{
+    font-family:var(--serif); font-style:italic; font-size: 120px; line-height:0;
+    color: var(--accent); display:inline-block; vertical-align:-.1em; margin-right:10px;
+    opacity:.9;
+  }
+  .quote__attr{
+    margin-top: 36px;
+    font-size: 11px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-60);
+    display:flex; gap: 14px; align-items:center;
+  }
+  .quote__attr .dot{ width:4px; height:4px; border-radius:50%; background:var(--accent); display:inline-block;}
+  @media (min-width: 900px){
+    .quote{ grid-template-columns: .9fr 1.1fr; gap: 80px; }
+  }
+
+  /* ===== FOR WHO ===== */
+  .forwho{ background:var(--cream-2); border-bottom: .5px solid var(--line); }
+  .forwho__head{
+    display:grid; grid-template-columns:1fr; gap: 16px;
+    max-width: 1280px; margin: 0 auto 56px;
+  }
+  .forwho__title{
+    font-family: var(--serif); font-weight:300;
+    font-size: clamp(36px, 6vw, 72px);
+    line-height: 1.02; letter-spacing:-.01em;
+    max-width: 14ch;
+  }
+  .forwho__title em{ font-style:italic; color: var(--accent); }
+  .forwho__sub{
+    font-size: 16px; line-height:1.65; color: #3a3530;
+    max-width: 44ch; align-self:end; text-align: right; justify-self:end;
+  }
+  @media (min-width: 900px){
+    .forwho__head{ grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: end; }
+  }
+  .triggers{
+    max-width: 1280px; margin: 0 auto;
+    border-top: .5px solid var(--line);
+  }
+  .trigger{
+    display:grid; grid-template-columns: 48px 1fr auto; gap: 18px;
+    align-items:center;
+    padding: 28px 4px;
+    border-bottom: .5px solid var(--line);
+    transition: padding-left .3s;
+  }
+  .trigger:hover{ padding-left: 12px; }
+  .trigger__num{
+    font-family:var(--mono); font-size:11px; color: var(--ink-45); letter-spacing:.1em;
+  }
+  .trigger__text{
+    font-family: var(--serif); font-weight:400;
+    font-size: clamp(20px, 2.6vw, 30px);
+    line-height: 1.3;
+  }
+  .trigger__text em{ font-style:italic; color:var(--accent);}
+  .trigger__arrow{ color: var(--ink-45); font-family:var(--serif); font-size:22px; transition: color .2s, transform .3s;}
+  .trigger:hover .trigger__arrow{ color: var(--accent); transform: translateX(6px); }
+  @media (min-width: 900px){
+    .trigger{ grid-template-columns: 80px 1fr auto; padding: 36px 4px; gap: 32px; }
+  }
+
+  /* ===== PRODUCTS ===== */
+  .products{ background: var(--cream); }
+  .products__head{
+    display:grid; grid-template-columns:1fr; gap: 20px;
+    max-width: 1280px; margin: 0 auto 64px;
+  }
+  .products__title{
+    font-family:var(--serif); font-weight:300;
+    font-size: clamp(36px, 6vw, 72px); line-height:1;
+    letter-spacing:-.01em;
+  }
+  .products__title em{ font-style:italic; color: var(--accent); }
+  .products__intro{
+    font-size: 16px; line-height: 1.7; color: var(--body); max-width: 48ch;
+    align-self:end;
+  }
+  @media (min-width: 900px){
+    .products__head{ grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: end; }
+  }
+
+  .product{
+    max-width: 1280px; margin: 0 auto;
+    border-top: .5px solid var(--line);
+  }
+  .product__topline{
+    display:grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items:center;
+    padding: 36px 0 22px;
+  }
+  .product__idx{ font-family:var(--mono); font-size: 11px; color:var(--ink-45); letter-spacing:.08em; }
+  .product__kind{ font-size: 11px; letter-spacing:.26em; text-transform:uppercase; color:var(--ink-60); }
+  .product__status{
+    font-size: 10px; letter-spacing:.22em; text-transform:uppercase;
+    padding: 6px 12px; border:.5px solid var(--line); border-radius: 999px; color:var(--ink-60);
+  }
+  .product__status--soon{ color: var(--accent); border-color: rgba(140,42,42,.35); }
+
+  .trilogy{
+    display:grid; grid-template-columns: 1fr; gap: 36px;
+    padding-bottom: 48px;
+  }
+  .trilogy__left{
+    display:flex; flex-direction:column; gap: 20px;
+  }
+  .trilogy__name{
+    font-family:var(--serif); font-weight:400;
+    font-size: clamp(44px, 7vw, 96px); line-height: .95; letter-spacing:-.02em;
+  }
+  .trilogy__name em{ font-style:italic; font-weight:300; color:var(--accent);}
+  .trilogy__desc{
+    font-size: 16px; line-height:1.7; color: var(--body); max-width: 42ch;
+  }
+  .trilogy__price-wrap{
+    margin-top: 10px;
+    padding: 20px 0;
+    border-top: .5px solid var(--line); border-bottom: .5px solid var(--line);
+    display:grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .pricebox__label{ font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-45); margin-bottom: 6px; }
+  .pricebox__value{ font-family:var(--serif); font-size: 32px; font-weight:400; line-height:1; }
+  .pricebox__value span{ font-size: 14px; letter-spacing:.2em; text-transform:uppercase; margin-left:6px; color:var(--ink-60); font-family:var(--sans);}
+  .trilogy__ctas{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 16px; }
+
+  .trilogy__accordion{
+    border-top: .5px solid var(--line);
+  }
+  .acc__item{
+    border-bottom: .5px solid var(--line);
+    overflow: hidden;
+  }
+  .acc__head{
+    display:grid; grid-template-columns: 56px 1fr auto; gap:18px; align-items:center;
+    padding: 22px 0; width:100%; text-align:left;
+    transition: padding-left .25s;
+  }
+  .acc__head:hover{ padding-left: 8px; }
+  .acc__num{ font-family:var(--mono); font-size: 11px; color: var(--ink-45); letter-spacing:.1em; }
+  .acc__title{
+    font-family:var(--serif); font-weight:400;
+    font-size: clamp(20px, 2.4vw, 28px); line-height:1.2; letter-spacing:-.005em;
+  }
+  .acc__title em{ font-style:italic; color:var(--accent); }
+  .acc__plus{
+    width: 28px; height: 28px; border-radius:50%;
+    border: .5px solid var(--ink-25);
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+    transition: transform .4s, background .25s, border-color .25s;
+  }
+  .acc__plus::before, .acc__plus::after{
+    content:""; position:absolute; background:var(--ink);
+  }
+  .acc__plus::before{ width: 10px; height:.5px; }
+  .acc__plus::after{ width: .5px; height: 10px; transition: transform .35s; }
+  .acc__item[data-open="true"] .acc__plus{ background: var(--ink); border-color:var(--ink); }
+  .acc__item[data-open="true"] .acc__plus::before{ background: var(--cream); }
+  .acc__item[data-open="true"] .acc__plus::after{ background: var(--cream); transform: scaleY(0); }
+  .acc__body{
+    display:grid; grid-template-rows: 0fr;
+    transition: grid-template-rows .5s cubic-bezier(.4,0,.2,1);
+  }
+  .acc__item[data-open="true"] .acc__body{ grid-template-rows: 1fr; }
+  .acc__body > div{ overflow:hidden; }
+  .acc__inner{
+    display:grid; grid-template-columns:1fr; gap: 20px;
+    padding: 0 0 28px;
+  }
+  @media (min-width: 700px){
+    .acc__inner{ grid-template-columns: 1.1fr 1fr; gap: 28px; padding-left: 74px; }
+  }
+  .acc__photo{
+    aspect-ratio: 16/9; overflow:hidden; border:.5px solid var(--line);
+  }
+  .acc__photo img{ width:100%; height:100%; object-fit:cover; filter: saturate(.92); }
+  .acc__text{ font-size: 15px; line-height:1.7; color: var(--body); }
+  .acc__text p + p{ margin-top:12px; color: var(--body); }
+  .acc__list{ list-style:none; display:flex; flex-direction:column; gap: 8px; margin-top: 16px;}
+  .acc__list li{ display:grid; grid-template-columns: 14px 1fr; gap: 10px; font-size: 14px; color: var(--body); }
+  .acc__list li::before{ content:""; height:.5px; width:10px; background: var(--ink-45); margin-top:10px; display:block; }
+
+  @media (min-width: 900px){
+    .trilogy{ grid-template-columns: 1fr 1.15fr; gap: 72px; padding-bottom: 80px; align-items:start; }
+  }
+
+  /* secondary products */
+  .prod-row{
+    display:grid; grid-template-columns: 1fr; gap: 28px;
+    padding-bottom: 48px;
+  }
+  .prod-row__photo{
+    aspect-ratio: 4/5; overflow:hidden; border:.5px solid var(--line);
+  }
+  .prod-row__photo img{ width:100%; height:100%; object-fit:cover; }
+  .prod-row__text{ display:flex; flex-direction:column; justify-content:center; gap: 20px; }
+  .prod-row__name{
+    font-family:var(--serif); font-weight:300;
+    font-size: clamp(36px, 5vw, 64px); line-height:1; letter-spacing:-.015em;
+  }
+  .prod-row__name em{ font-style:italic; color:var(--accent); }
+  .prod-row__meta{
+    display:flex; gap: 18px; flex-wrap:wrap;
+    font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-60);
+    padding: 16px 0; border-top: .5px solid var(--line); border-bottom: .5px solid var(--line);
+  }
+  .prod-row__meta b{ color:var(--ink); font-weight:400; font-family:var(--serif); font-style:italic; text-transform:none; letter-spacing:.02em; font-size:16px;}
+  .prod-row__desc{ font-size: 15px; line-height: 1.75; color: var(--body); max-width: 52ch; }
+  @media (min-width: 900px){
+    .prod-row{ grid-template-columns: .85fr 1.15fr; gap: 56px; padding-bottom: 72px; }
+    .prod-row--reverse .prod-row__photo{ order: 2; }
+  }
+
+  .prod-row--soon .prod-row__photo{
+    background: linear-gradient(var(--cream-2), var(--cream-2));
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  .soon-plate{
+    text-align:center; padding: 40px; color: var(--ink-60);
+  }
+  .soon-plate__glyph{
+    font-family:var(--serif); font-style:italic; font-size: 120px; line-height:1; color: var(--accent); opacity:.85;
+  }
+  .soon-plate__label{
+    margin-top: 14px; font-size: 11px; letter-spacing:.28em; text-transform:uppercase;
+  }
+  .soon-plate__stripes{
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(135deg, transparent 0 18px, rgba(26,23,20,.04) 18px 19px);
+    pointer-events:none;
+  }
+
+  /* Trilogy typographic anchor (replaces old photo) */
+  .trilogy__typo{
+    margin: 28px 0 36px;
+    border-top: .5px solid var(--line);
+    border-bottom: .5px solid var(--line);
+    padding: 8px 0;
+  }
+  .trilogy__typo-row{
+    display:flex; align-items:baseline; gap: 28px;
+    padding: 22px 0;
+    border-bottom: .5px solid var(--line);
+    font-family:var(--serif); font-weight:300;
+    font-size: clamp(26px, 3.2vw, 38px); line-height:1.1;
+  }
+  .trilogy__typo-row:last-child{ border-bottom: none; }
+  .trilogy__typo-row em{ font-style:italic; color:var(--accent); }
+  .trilogy__typo-num{
+    font-family:var(--mono); font-size: 11px; letter-spacing:.22em;
+    color: var(--ink-45); min-width: 32px;
+  }
+
+  /* Accent (bordeaux) button for accordion buy CTA */
+  .btn--accent{
+    display:inline-flex; align-items:center; gap: 10px;
+    padding: 11px 20px;
+    border: .5px solid var(--accent);
+    border-radius: 999px;
+    color: var(--accent);
+    font-size: 12px; letter-spacing:.18em; text-transform:uppercase;
+    font-weight: 400;
+    transition: background .25s, color .25s;
+    margin-top: 18px; align-self:flex-start;
+  }
+  .btn--accent:hover{ background: var(--accent); color: var(--cream); }
+
+  /* ===== COMMUNITY (dark) ===== */
+  .community{
+    background: var(--ink);
+    color: var(--cream);
+    position:relative; overflow:hidden;
+  }
+  .community__bg{
+    position:absolute; inset:0; z-index:0;
+  }
+  .community__bg img{
+    width:100%; height:100%; object-fit:cover;
+    opacity: .28; filter: saturate(.4) contrast(1.05);
+  }
+  .community__bg::after{
+    content:""; position:absolute; inset:0;
+    background: radial-gradient(circle at 30% 40%, rgba(140,42,42,.25), transparent 55%), rgba(26,23,20,.6);
+  }
+  .community__inner{ position:relative; z-index:1; max-width: 1280px; margin: 0 auto; }
+  .community .section__kicker{ color: rgba(245,240,235,.6); }
+  .community .section__kicker .rule{ background: var(--line-cream); }
+
+  .community__head{
+    display:grid; grid-template-columns:1fr; gap: 32px; margin-bottom: 72px;
+  }
+  .community__brand{
+    font-family:var(--serif); font-weight:300;
+    font-size: clamp(64px, 11vw, 160px); line-height: .9;
+    letter-spacing:-.02em;
+  }
+  .community__brand em{ font-style:italic; display:block; color:rgba(245,240,235,.65); }
+  .community__intro{ max-width: 44ch; font-size: 15px; line-height:1.7; color: rgba(245,240,235,.75); }
+  @media (min-width: 900px){
+    .community__head{ grid-template-columns: 1.35fr 1fr; align-items: end; gap: 60px; }
+  }
+
+  .video-plate{
+    position:relative;
+    aspect-ratio: 16/9;
+    border: .5px solid var(--line-cream);
+    overflow:hidden;
+    margin-bottom: 72px;
+  }
+  .video-plate img{ width:100%; height:100%; object-fit:cover; filter: grayscale(.3) brightness(.85); }
+  .video-plate__scrim{
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px;
+    background: linear-gradient( to bottom, transparent 30%, rgba(26,23,20,.55));
+  }
+  .playbtn{
+    width:72px; height:72px; border-radius:50%;
+    border: .5px solid rgba(245,240,235,.6);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--cream);
+    transition: background .3s, transform .3s;
+  }
+  .playbtn:hover{ background: rgba(245,240,235,.1); transform: scale(1.05); }
+  .playbtn::before{
+    content:""; display:block;
+    width:0; height:0;
+    border-left: 14px solid var(--cream); border-top: 9px solid transparent; border-bottom: 9px solid transparent;
+    margin-left: 4px;
+  }
+  .video-plate__label{
+    font-size:11px; letter-spacing:.28em; text-transform:uppercase; color: rgba(245,240,235,.7);
+  }
+  .video-plate__corner{
+    position:absolute; bottom: 18px; left:18px; right:18px;
+    display:flex; justify-content: space-between; align-items:flex-end;
+    font-family:var(--mono); font-size: 10px; letter-spacing:.1em; color: rgba(245,240,235,.55);
+  }
+
+  .phrases{
+    display:grid; grid-template-columns:1fr; gap: 1px;
+    background: var(--line-cream);
+    border: .5px solid var(--line-cream);
+    margin-bottom: 72px;
+  }
+  .phrase{
+    padding: 36px 28px;
+    display:flex; flex-direction:column; gap: 16px;
+    min-height: 200px; justify-content:space-between;
+  }
+  .phrase--dark{ background: var(--ink); color: var(--cream); }
+  .phrase--light{ background: var(--cream); color: var(--ink); }
+  .phrase__num{ font-family:var(--mono); font-size: 10px; letter-spacing:.22em; }
+  .phrase--dark .phrase__num{ color: rgba(245,240,235,.45); }
+  .phrase--light .phrase__num{ color: var(--ink-45); }
+  .phrase__text{
+    font-family:var(--serif); font-weight:300;
+    font-size: clamp(20px, 2.4vw, 28px); line-height:1.25;
+  }
+  .phrase--dark .phrase__text em{ font-style:italic; color: rgba(245,240,235,.7); }
+  .phrase--light .phrase__text em{ font-style:italic; color: var(--accent); }
+  @media (min-width: 700px){ .phrases{ grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px){ .phrases{ grid-template-columns: repeat(4, 1fr); } .phrase{ min-height: 260px; padding: 40px 28px;} }
+
+  .features{
+    display:grid; grid-template-columns:1fr; gap: 1px;
+    background: var(--line-cream);
+    border: .5px solid var(--line-cream);
+  }
+  .feat{
+    padding: 36px 28px;
+    display:flex; flex-direction:column; gap: 14px;
+  }
+  .feat--dark{ background: var(--ink); color: var(--cream); }
+  .feat--light{ background: var(--cream); color: var(--ink); }
+  .feat__glyph{
+    width: 44px; height:44px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); font-style:italic; font-size: 22px;
+  }
+  .feat--dark .feat__glyph{ border: .5px solid rgba(245,240,235,.45); color: var(--cream); }
+  .feat--light .feat__glyph{ border: .5px solid var(--line); color: var(--accent); }
+  .feat__title{
+    font-family:var(--serif); font-weight:400;
+    font-size: 22px; line-height:1.2;
+  }
+  .feat--dark .feat__title em{ font-style:italic; color: rgba(245,240,235,.65); }
+  .feat--light .feat__title em{ font-style:italic; color: var(--accent); }
+  .feat__desc{ font-size: 15px; line-height:1.65; }
+  .feat--dark .feat__desc{ color: rgba(245,240,235,.72); }
+  .feat--light .feat__desc{ color: var(--body); }
+  @media (min-width: 700px){ .features{ grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px){ .features{ grid-template-columns: repeat(4, 1fr); } }
+
+  .community__cta{
+    margin-top: 72px;
+    display:grid; grid-template-columns:1fr; gap: 24px;
+    padding-top: 40px;
+    border-top: .5px solid var(--line-cream);
+    align-items: end;
+  }
+  .community__cta h3{
+    font-family:var(--serif); font-weight:300;
+    font-size: clamp(30px, 4vw, 48px); line-height:1.05; letter-spacing:-.01em;
+    max-width: 18ch;
+  }
+  .community__cta h3 em{ font-style:italic; color: rgba(245,240,235,.6); }
+  @media (min-width: 900px){
+    .community__cta{ grid-template-columns: 1.4fr 1fr; gap: 48px; }
+    .community__cta .ctas{ justify-self: end; }
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    background: var(--cream);
+    padding: 64px 20px 28px;
+    border-top: .5px solid var(--line);
+  }
+  .footer__inner{ max-width: 1280px; margin:0 auto; }
+  .footer__top{
+    display:grid; grid-template-columns:1fr; gap: 40px;
+    padding-bottom: 48px;
+    border-bottom: .5px solid var(--line);
+  }
+  .footer__brand{
+    font-family:var(--serif); font-style:italic; font-weight:400;
+    font-size: clamp(44px, 6vw, 72px); line-height:1; letter-spacing:-.01em;
+  }
+  .footer__brand small{
+    display:block; font-family:var(--sans); font-style:normal; font-size:11px;
+    letter-spacing:.28em; text-transform:uppercase; color:var(--ink-60); margin-top:10px;
+  }
+  .footer__cols{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    font-size: 13px; line-height: 1.8;
+  }
+  .footer__col h5{
+    font-size: 10px; font-weight:500; letter-spacing:.28em; text-transform:uppercase; color:var(--ink-60);
+    margin-bottom: 12px;
+  }
+  .footer__col a{ display:block; color: var(--ink); opacity:.85; }
+  .footer__col a:hover{ color: var(--accent); }
+  .footer__legal{
+    padding: 22px 0;
+    border-bottom: .5px solid var(--line);
+    display:flex; flex-wrap:wrap; gap: 10px 14px; align-items:center;
+    font-size: 12px; letter-spacing:.12em; text-transform:uppercase; color: var(--ink-60);
+  }
+  .footer__legal a{ color: var(--ink-60); transition: color .2s; }
+  .footer__legal a:hover{ color: var(--accent); }
+  .footer__legal-sep{ opacity:.5; }
+  .footer__bot{
+    padding-top: 22px;
+    display:flex; flex-wrap:wrap; gap: 12px; justify-content: space-between;
+    font-size: 11px; letter-spacing:.16em; text-transform:uppercase; color: var(--ink-60);
+  }
+  @media (min-width: 900px){
+    .footer__top{ grid-template-columns: 1.3fr 1fr; gap: 64px; align-items:start; }
+    .footer__cols{ grid-template-columns: repeat(2, 1fr); gap: 36px; justify-self:end; width:100%; }
+  }
+
+  /* ===== TWEAKS PANEL ===== */
+  .tweaks{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    width: 280px;
+    background: var(--cream);
+    border: .5px solid var(--ink);
+    padding: 18px 18px 16px;
+    font-size: 12px;
+    display: none;
+    box-shadow: 0 24px 60px rgba(26,23,20,.2);
+  }
+  .tweaks.open{ display:block; }
+  .tweaks h4{
+    font-family: var(--serif); font-style:italic; font-weight:400; font-size: 22px;
+    margin-bottom: 14px; padding-bottom:10px; border-bottom:.5px solid var(--line);
+  }
+  .tweaks label{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:10px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-60);
+  }
+  .tweaks__swatches{ display:flex; gap:6px; }
+  .tweaks__sw{ width: 22px; height: 22px; border-radius:50%; border:.5px solid var(--ink-25); cursor:pointer; }
+  .tweaks__sw[data-sel="true"]{ border-color: var(--ink); box-shadow: inset 0 0 0 2px var(--cream); }
+
+  /* utility */
+  .max { max-width: 1280px; margin: 0 auto; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__brand"><b>хто я така</b><span>Ірина Хороших</span></div>
+  <div class="nav__links">
+    <a href="#quote">Про мене</a>
+    <a href="#forwho">Для кого</a>
+    <a href="#products">Продукти</a>
+    <a href="#community">Спільнота</a>
+  </div>
+  <a href="#community" class="nav__cta">Приєднатись</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero__photo" id="heroPhoto">
+    <img src="images/hero.jpg" alt="Ірина Хороших" />
+  </div>
+  <!-- hero maps to blue satin portrait -->
+  <div class="hero__content">
+    <div class="hero__meta">
+      <span>Менторка · Підприємниця</span>
+      <span>Україна · 2026</span>
+    </div>
+    <h1 class="hero__name">Ірина<em style="color:var(--accent)">Хороших</em></h1>
+    <p class="hero__tagline">
+      Я не вчу <em>як стати кращою.</em><br/>
+      Я показую як <em>повернутись до себе.</em>
+    </p>
+    <div class="hero__footer">
+      <a href="#products" class="btn btn--solid">Мої продукти <span class="btn__arrow"></span></a>
+      <a href="#community" class="btn btn--ghost">Спільнота Хто Я Така</a>
+    </div>
+  </div>
+</header>
+
+<!-- QUOTE -->
+<section class="quote wrap" id="quote">
+  <div class="max" style="display:contents;">
+    <div class="quote__img"><img src="images/quote-bw.jpg" alt=""></div>
+    <div>
+      <div class="section__kicker"><span class="num">01</span><span>Шлях</span><span class="rule"></span></div>
+      <p class="quote__text">
+        <span class="quote__mark">“</span>10&nbsp;років тому я&nbsp;прийшла до&nbsp;психолога зі&nbsp;словами <em>«я&nbsp;себе ненавиджу»</em>
+      </p>
+      <div class="quote__attr">
+        <span class="dot"></span>
+        <span>Ірина · особиста історія</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="forwho wrap" id="forwho">
+  <div class="forwho__head">
+    <h2 class="forwho__title">Це для <em>жінки</em> 30+, яка...</h2>
+    <p class="forwho__sub">П’ять тригерів, які, найімовірніше, привели тебе сюди. Якщо впізнаєш себе хоча б в&nbsp;одному — значить ми говоримо однією мовою.</p>
+  </div>
+  <ul class="triggers">
+    <li class="trigger">
+      <span class="trigger__num">I</span>
+      <span class="trigger__text">…раптом перестала <em>впізнавати себе</em> у&nbsp;дзеркалі й&nbsp;у&nbsp;власному житті</span>
+      <span class="trigger__arrow">→</span>
+    </li>
+    <li class="trigger">
+      <span class="trigger__num">II</span>
+      <span class="trigger__text">…робить все правильно, але внутрішньо <em>порожня</em> й&nbsp;втомлена</span>
+      <span class="trigger__arrow">→</span>
+    </li>
+    <li class="trigger">
+      <span class="trigger__num">III</span>
+      <span class="trigger__text">…відчуває, що живе <em>чуже життя</em> — для чоловіка, дітей, очікувань</span>
+      <span class="trigger__arrow">→</span>
+    </li>
+    <li class="trigger">
+      <span class="trigger__num">IV</span>
+      <span class="trigger__text">…боїться починати нове, бо не знає, <em>чого хоче насправді</em></span>
+      <span class="trigger__arrow">→</span>
+    </li>
+    <li class="trigger">
+      <span class="trigger__num">V</span>
+      <span class="trigger__text">…хоче навчитись <em>обирати себе</em> без провини й&nbsp;самозвинувачення</span>
+      <span class="trigger__arrow">→</span>
+    </li>
+  </ul>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products wrap" id="products">
+  <div class="products__head">
+    <h2 class="products__title">Шлях до <em>себе</em> — <br>у&nbsp;трьох форматах</h2>
+    <p class="products__intro">Обери те, що відгукується зараз. Почни з&nbsp;однієї зустрічі або пройди весь шлях&nbsp;— від внутрішньої опори до справжньої близькості з&nbsp;іншими.</p>
+  </div>
+
+  <!-- Trilogy product -->
+  <article class="product">
+    <div class="product__topline">
+      <span class="product__idx">01 / 03</span>
+      <span class="product__kind">— Трилогія · Онлайн-зустрічі</span>
+      <span class="product__status">Запис доступний</span>
+    </div>
+
+    <div class="trilogy">
+      <div class="trilogy__left">
+        <h3 class="trilogy__name">Внутрішня<br><em>опора</em></h3>
+        <p class="trilogy__desc">Три онлайн-зустрічі, які ведуть від самопідтримки&nbsp;— через здорові кордони у&nbsp;стосунках&nbsp;— до пошуку власної самореалізації. Лекція, практика, тиха рефлексія.</p>
+        <div class="trilogy__typo">
+          <div class="trilogy__typo-row"><span class="trilogy__typo-num">I</span><span>Самопідтримка</span></div>
+          <div class="trilogy__typo-row"><span class="trilogy__typo-num">II</span><span>Кордони</span></div>
+          <div class="trilogy__typo-row"><span class="trilogy__typo-num">III</span><span><em>Самореалізація</em></span></div>
+        </div>
+
+        <div class="trilogy__price-wrap">
+          <div class="pricebox">
+            <div class="pricebox__label">Вся трилогія</div>
+            <div class="pricebox__value">3&thinsp;000 <span>UAH</span></div>
+          </div>
+          <div class="pricebox">
+            <div class="pricebox__label">Одна зустріч</div>
+            <div class="pricebox__value">1&thinsp;500 <span>UAH</span></div>
+          </div>
+        </div>
+
+        <div class="trilogy__ctas">
+          <a class="btn btn--solid" href="https://secure.wayforpay.com/payment/s06315ca19525" target="_blank" rel="noopener">Купити трилогію <span class="btn__arrow"></span></a>
+          <button class="btn btn--ghost" id="openAllAcc">Обрати одну</button>
+        </div>
+      </div>
+
+      <div class="trilogy__accordion" id="trilogyAcc">
+        <!-- item 1 -->
+        <div class="acc__item" data-open="true">
+          <button class="acc__head" data-acc-trigger>
+            <span class="acc__num">I</span>
+            <span class="acc__title">Самопідтримка <em>і самодопомога</em></span>
+            <span class="acc__plus" aria-hidden="true"></span>
+          </button>
+          <div class="acc__body"><div>
+            <div class="acc__inner">
+              <div class="acc__photo"><img src="images/trilogy-1.jpg" alt=""></div>
+              <div class="acc__text">
+                <p>Перша зустріч — про фундамент. Як бути собі опорою, коли немає сил, немає відповідей, немає людей поруч.</p>
+                <p>Ми розберемо механіки самозвинувачення, знайомство з&nbsp;внутрішнім критиком і&nbsp;практичні техніки повернення у&nbsp;ресурс.</p>
+                <ul class="acc__list">
+                  <li>Лекція · 90&nbsp;хв</li>
+                  <li>Робочий зошит &amp; практики</li>
+                  <li>Запис назавжди</li>
+                </ul>
+                <a class="btn btn--accent" href="https://secure.wayforpay.com/payment/s2b40be611554" target="_blank" rel="noopener">Купити запис — 1&thinsp;500 UAH</a>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- item 2 -->
+        <div class="acc__item">
+          <button class="acc__head" data-acc-trigger>
+            <span class="acc__num">II</span>
+            <span class="acc__title">Здорові <em>кордони</em> і стосунки</span>
+            <span class="acc__plus" aria-hidden="true"></span>
+          </button>
+          <div class="acc__body"><div>
+            <div class="acc__inner">
+              <div class="acc__photo"><img src="images/trilogy-2.jpg" alt=""></div>
+              <div class="acc__text">
+                <p>Друга зустріч — про те, де закінчуєшся ти і починається інший. Як казати «ні» без провини і «так» без страху.</p>
+                <p>Розмова про батьків, партнерів, дорослих дітей, колег. Про жіночу дружбу і про те, як перестати рятувати.</p>
+                <ul class="acc__list">
+                  <li>Лекція · 90&nbsp;хв</li>
+                  <li>Карти ситуацій + скрипти</li>
+                  <li>Запис назавжди</li>
+                </ul>
+                <a class="btn btn--accent" href="https://secure.wayforpay.com/payment/s0876c219b063" target="_blank" rel="noopener">Купити запис — 1&thinsp;500 UAH</a>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- item 3 -->
+        <div class="acc__item">
+          <button class="acc__head" data-acc-trigger>
+            <span class="acc__num">III</span>
+            <span class="acc__title">Пошук <em>самореалізації</em></span>
+            <span class="acc__plus" aria-hidden="true"></span>
+          </button>
+          <div class="acc__body"><div>
+            <div class="acc__inner">
+              <div class="acc__photo"><img src="images/trilogy-3.jpg" alt=""></div>
+              <div class="acc__text">
+                <p>Третя зустріч — про те, що робити зі&nbsp;своїм життям далі. Як почути справжнє «хочу», коли навколо стільки «треба».</p>
+                <p>Ми попрацюємо з&nbsp;внутрішнім дозволом, страхом «а&nbsp;раптом не&nbsp;вийде» і&nbsp;вектором на найближчі 12&nbsp;місяців.</p>
+                <ul class="acc__list">
+                  <li>Лекція · 90&nbsp;хв</li>
+                  <li>Картка вектору року</li>
+                  <li>Запис назавжди</li>
+                </ul>
+                <a class="btn btn--accent" href="https://secure.wayforpay.com/payment/s6a44e83bfece" target="_blank" rel="noopener">Купити запис — 1&thinsp;500 UAH</a>
+              </div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Webinar -->
+  <article class="product">
+    <div class="product__topline">
+      <span class="product__idx">02 / 03</span>
+      <span class="product__kind">— Вебінар · Одна зустріч</span>
+      <span class="product__status">Запис доступний</span>
+    </div>
+
+    <div class="prod-row prod-row--reverse">
+      <div class="prod-row__photo"><img src="images/webinar.jpg" alt="" style="filter:saturate(.92);"></div>
+      <div class="prod-row__text">
+        <h3 class="prod-row__name">Близькість</h3>
+        <div class="prod-row__meta">
+          <span>Тривалість <b>2&nbsp;год</b></span>
+          <span>Формат <b>онлайн</b></span>
+          <span>Вартість <b>1&thinsp;500&nbsp;UAH</b></span>
+        </div>
+        <p class="prod-row__desc">Про близькість, яку не&nbsp;треба заслуговувати. Як дозволити собі справжність поруч з&nbsp;іншою людиною, не&nbsp;втрачаючи себе. Про співзалежність, уникання, страх злиття і&nbsp;страх відстані. Запис ефіру зі&nbsp;своїми практиками.</p>
+        <div class="trilogy__ctas">
+          <a class="btn btn--solid" href="https://secure.wayforpay.com/payment/s4a512fa7d31a" target="_blank" rel="noopener">Отримати запис <span class="btn__arrow"></span></a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Mentoring coming soon -->
+  <article class="product">
+    <div class="product__topline">
+      <span class="product__idx">03 / 03</span>
+      <span class="product__kind">— Менторство · Індивідуально</span>
+      <span class="product__status product__status--soon">Скоро</span>
+    </div>
+
+    <div class="prod-row prod-row--soon">
+      <div class="prod-row__photo">
+        <div class="soon-plate__stripes"></div>
+        <div class="soon-plate">
+          <div class="soon-plate__glyph">М.</div>
+          <div class="soon-plate__label">Набір відкриється скоро</div>
+        </div>
+      </div>
+      <div class="prod-row__text">
+        <h3 class="prod-row__name"><em>Менторство</em> 1:1</h3>
+        <div class="prod-row__meta">
+          <span>Формат <b>3 місяці</b></span>
+          <span>Сесії <b>щотижня</b></span>
+          <span>Набір <b>8 жінок</b></span>
+        </div>
+        <p class="prod-row__desc">Глибокий персональний супровід для жінок, які готові не просто зрозуміти, а зробити. Тут ми працюємо з&nbsp;конкретною точкою А, яка болить — і&nbsp;з&nbsp;точкою Б, яка кличе.</p>
+        <div class="trilogy__ctas">
+          <a class="btn btn--ghost" href="https://t.me/Idemeshok_bot?start=w53357629" target="_blank" rel="noopener">Залишити заявку в лист очікування</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community wrap" id="community">
+  <div class="community__bg"><img src="images/community.jpg" alt=""></div>
+
+  <div class="community__inner">
+    <div class="section__kicker"><span class="num">04</span><span>Спільнота</span><span class="rule"></span></div>
+
+    <div class="community__head">
+      <h2 class="community__brand">Хто<em>я така</em></h2>
+      <p class="community__intro">Простір для жінок, які вже не&nbsp;хочуть бути «зручними» — а&nbsp;хочуть бути справжніми. Регулярні зустрічі офлайн та онлайн, практики, лист-розсилка і&nbsp;жіноче плече поруч.</p>
+    </div>
+
+    <div class="video-plate">
+      <img src="images/community.jpg" alt="">
+      <div class="video-plate__scrim">
+        <button class="playbtn" aria-label="Дивитись відео"></button>
+        <div class="video-plate__label">Подивитись маніфест · 02:14</div>
+      </div>
+      <div class="video-plate__corner">
+        <span>REC · Хто я така</span>
+        <span>01 / 01</span>
+      </div>
+    </div>
+
+    <div class="phrases">
+      <div class="phrase phrase--dark">
+        <span class="phrase__num">— 01</span>
+        <p class="phrase__text">Тут можна <em>не&nbsp;знати</em>. І&nbsp;це не робить тебе гіршою.</p>
+      </div>
+      <div class="phrase phrase--light">
+        <span class="phrase__num">— 02</span>
+        <p class="phrase__text">Тут не вчать бути собою. Тут <em>дають дозвіл</em>.</p>
+      </div>
+      <div class="phrase phrase--light">
+        <span class="phrase__num">— 03</span>
+        <p class="phrase__text">Тут жінка жінці — <em>не&nbsp;конкурентка</em>, а&nbsp;дзеркало.</p>
+      </div>
+      <div class="phrase phrase--dark">
+        <span class="phrase__num">— 04</span>
+        <p class="phrase__text">Тут <em>тихо</em>. Навіть коли всередині шторм.</p>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feat feat--light">
+        <div class="feat__glyph">з</div>
+        <div class="feat__title">Живі зустрічі <em>онлайн</em></div>
+        <p class="feat__desc">1–2 рази на місяць з&nbsp;Іриною та запрошеними експертами.</p>
+      </div>
+      <div class="feat feat--dark">
+        <div class="feat__glyph">о</div>
+        <div class="feat__title">Офлайн <em>зустрічі</em></div>
+        <p class="feat__desc">Київ та інші міста — бранчі, вечори, практики.</p>
+      </div>
+      <div class="feat feat--dark">
+        <div class="feat__glyph">ж</div>
+        <div class="feat__title">Жіноче <em>коло</em></div>
+        <p class="feat__desc">Закритий чат без оцінок, порад і&nbsp;порятунку.</p>
+      </div>
+      <div class="feat feat--light">
+        <div class="feat__glyph">п</div>
+        <div class="feat__title">Підтримка <em>щотижня</em></div>
+        <p class="feat__desc">Практики, медитації та рефлексія від Ірини.</p>
+      </div>
+    </div>
+
+    <div class="community__cta">
+      <h3>Якщо все це відгукується — <em>заходь</em>.</h3>
+      <div class="ctas">
+        <a href="https://t.me/khto_ya_taka_bot?start=HbDvdxXwGzABE3vr8TOXYOiD2G2TZMSz" target="_blank" rel="noopener" class="btn btn--cream">Приєднатись до спільноти <span class="btn__arrow"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">Хто я&nbsp;така<small>Ірина Хороших · простір для жінок</small></div>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h5>Навігація</h5>
+          <a href="#quote">Про мене</a>
+          <a href="#forwho">Для кого</a>
+          <a href="#products">Продукти</a>
+          <a href="#community">Спільнота</a>
+        </div>
+        <div class="footer__col">
+          <h5>Соцмережі</h5>
+          <a href="https://www.instagram.com/ira.horoshyh/" target="_blank" rel="noopener">Instagram · особистий</a>
+          <a href="https://www.instagram.com/khto_ya_taka/" target="_blank" rel="noopener">Instagram · ком’юніті</a>
+          <a href="https://www.youtube.com/@irademeshok" target="_blank" rel="noopener">YouTube · @irademeshok</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <a href="#">Договір оферти</a>
+      <span class="footer__legal-sep">·</span>
+      <a href="#">Політика конфіденційності</a>
+      <span class="footer__legal-sep">·</span>
+      <a href="#">Повернення коштів</a>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 Ірина Хороших</span>
+      <span>Зроблено з&nbsp;любов'ю · FUNNELHUB</span>
+    </div>
+  </div>
+</footer>
+
+<!-- TWEAKS -->
+<aside class="tweaks" id="tweaks">
+  <h4>Tweaks</h4>
+  <label>Акцент <span class="tweaks__swatches" id="swAccent">
+    <span class="tweaks__sw" data-color="#8C2A2A" style="background:#8C2A2A"></span>
+    <span class="tweaks__sw" data-color="#6B2E2E" style="background:#6B2E2E"></span>
+    <span class="tweaks__sw" data-color="#A5562E" style="background:#A5562E"></span>
+    <span class="tweaks__sw" data-color="#3A4A3C" style="background:#3A4A3C"></span>
+    <span class="tweaks__sw" data-color="#1A1714" style="background:#1A1714"></span>
+  </span></label>
+  <label>Ціни видимі
+    <input type="checkbox" id="togglePrice" style="accent-color: var(--ink)">
+  </label>
+</aside>
+
+<script>
+  // Accordion (single-open)
+  document.querySelectorAll('[data-acc-trigger]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = btn.parentElement;
+      const acc = item.parentElement;
+      const wasOpen = item.getAttribute('data-open')==='true';
+      acc.querySelectorAll('.acc__item').forEach(i=> i.setAttribute('data-open','false'));
+      if(!wasOpen) item.setAttribute('data-open','true');
+    });
+  });
+
+  // \"Обрати одну\" — open ALL accordion items so user can see all 3 buy buttons
+  document.getElementById('openAllAcc')?.addEventListener('click', ()=>{
+    const acc = document.getElementById('trilogyAcc');
+    if(!acc) return;
+    acc.querySelectorAll('.acc__item').forEach(i=> i.setAttribute('data-open','true'));
+    const y = acc.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({top: y, behavior:'smooth'});
+  });
+
+  // Tweaks mode
+  let tweaksOn = false;
+  const applyTweaks = (vals) => {
+    if(vals.accent){ document.documentElement.style.setProperty('--accent', vals.accent); }
+    if(typeof vals.showPrice === 'boolean'){
+      document.querySelectorAll('.trilogy__price-wrap, .pricebox, .prod-row__meta').forEach(el=>{
+        el.style.opacity = vals.showPrice ? '' : '.2';
+      });
+      document.getElementById('togglePrice').checked = vals.showPrice;
+    }
+    // sync swatch selection
+    document.querySelectorAll('#swAccent .tweaks__sw').forEach(sw=>{
+      sw.setAttribute('data-sel', sw.getAttribute('data-color')===vals.accent ? 'true':'false');
+    });
+  };
+  applyTweaks(TWEAKS);
+
+  window.addEventListener('message', (e)=>{
+    const t = e.data?.type;
+    if(t==='__activate_edit_mode'){ tweaksOn=true; document.getElementById('tweaks').classList.add('open'); }
+    if(t==='__deactivate_edit_mode'){ tweaksOn=false; document.getElementById('tweaks').classList.remove('open'); }
+  });
+  // announce availability AFTER listener is registered
+  window.parent.postMessage({type:'__edit_mode_available'}, '*');
+
+  document.querySelectorAll('#swAccent .tweaks__sw').forEach(sw=>{
+    sw.addEventListener('click', ()=>{
+      const c = sw.getAttribute('data-color');
+      TWEAKS.accent = c;
+      applyTweaks(TWEAKS);
+      window.parent.postMessage({type:'__edit_mode_set_keys', edits:{accent: c}}, '*');
+    });
+  });
+  document.getElementById('togglePrice').addEventListener('change', e=>{
+    TWEAKS.showPrice = e.target.checked;
+    applyTweaks(TWEAKS);
+    window.parent.postMessage({type:'__edit_mode_set_keys', edits:{showPrice: e.target.checked}}, '*');
+  });
+</script>
+
+</body>
+</html>
